@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Input } from "./Input"
+import arrowIcon from '../../assets/images/icon-arrow.svg'
 
 export function Form() {
   const {
@@ -33,6 +34,7 @@ export function Form() {
         placeholder="YYYY"
       ></Input>
 
+      <div className="form__img"><img src={arrowIcon} alt="icon-arrow" /></div>
     </form>
   )
 }

@@ -1,35 +1,110 @@
-@forward 'globals';
-@forward 'typography';
-@forward 'colors';
+@forward "globals";
+@forward "typography";
+@forward "colors";
 
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
-    background-color: var(--off-white);
+  background-color: var(--off-white);
 
-    div#root {
-        @include flex-center();
-        min-height: 100dvh;        
-    }
+  div#root {
+    @include flex-center();
+    min-height: 100dvh;
+  }
 }
 
 .container {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    border-bottom-right-radius: 30px;
+  background-color: var(--white);
+  padding: 60px 20px;
+  border-radius: 30px;
+  border-bottom-right-radius: 120px;
+  width: 90vw;
+  @media (min-width: 769px) {
+    width: 60vw;
+    padding: 60px;
+  }
 }
 
 form {
-    display: flex;
-    gap: 20px;
-    padding-bottom: 60px;
-    @media (min-width: 769px) {
-        padding-bottom: 30px;
+  display: flex;
+  padding-bottom: 60px;
+  @media (min-width: 1200px) {
+    padding-bottom: 50px;
+  }
+  border-bottom: 1px solid var(--light-grey);
+  position: relative;
+
+  .input {
+    @media (min-width: 1200px) {
+      width: 28%;
     }
-    border-bottom: 1px solid var(--light-grey);
+
+    label {
+      display: block;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      color: var(--smokey-grey);
+      @media (max-width: 1199px) {
+        font-size: 0.7rem;
+        
+      }
+    }
+
+    input {
+      width: calc(100% - 10px);
+      padding: 15px;
+      @media (min-width: 769px) {
+        width: calc(100% - 30px);
+        padding: 20px;
+      }
+      font-family: "Poppins", serif;
+      font-weight: 700;
+      font-style: normal;
+      @media (min-width: 1200px) {
+        font-size: var(--input-font-size);
+      }
+      outline: none;
+      border: 1px solid var(--light-grey);
+      border-radius: 8px;
+      // Removing Arrows from Number Inputs
+      /* For WebKit browsers (Chrome, Safari, Edge) */
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &::placeholder {
+        color: var(--smokey-grey);
+      }
+    }
+  }
+
+  .form__img {
+    @media (max-width: 1199px) {
+      width: 65px;
+    }
+    background-color: var(--purple);
+    border-radius: 50%;
+    padding: 20px;
+    aspect-ratio: 1 / 1;
+    @include flex-center();
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    translate: 0 50%;
+    @media (max-width: 1199px) {
+      right: 50%;
+      translate: 50% 50%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
 }
