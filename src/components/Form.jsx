@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form"
+import { Input } from "./Input"
 
 export function Form() {
   const {
@@ -14,7 +15,24 @@ export function Form() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-        
+      <Input
+        register={register("day", { required: "This field is required" })}
+        label="DAY"
+        placeholder="DD"
+      ></Input>
+      
+      <Input
+        register={register("month", { required: "This field is required" })}
+        label="MONTH"
+        placeholder="MM"
+      ></Input>
+
+      <Input
+        register={register("year", { required: "This field is required" })}
+        label="YEAR"
+        placeholder="YYYY"
+      ></Input>
+
     </form>
   )
 }
