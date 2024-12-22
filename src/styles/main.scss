@@ -1,3 +1,35 @@
 @forward 'globals';
 @forward 'typography';
 @forward 'colors';
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--off-white);
+
+    div#root {
+        @include flex-center();
+        min-height: 100dvh;        
+    }
+}
+
+.container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border-bottom-right-radius: 30px;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 60px;
+    @media (min-width: 769px) {
+        padding-bottom: 30px;
+    }
+    border-bottom: 1px solid var(--smokey-grey);
+}
