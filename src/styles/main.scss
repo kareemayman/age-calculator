@@ -23,7 +23,7 @@ body {
   border-radius: 30px;
   border-bottom-right-radius: 120px;
   width: 90vw;
-  @media (min-width: 769px) {
+  @media (min-width: 900px) {
     width: 50vw;
     padding: 60px;
   }
@@ -114,7 +114,12 @@ form {
 }
 
 .age-output {
-  font-size: clamp(16px, 10px + 5vw, 90px);
+  font-size: clamp(16px, 12px + 5vw, 90px);
+
+  @media (max-width: 900px) {
+    font-size: clamp(16px, 5px + 9vw, 90px);
+    
+  }
   span {
     color: var(--purple);
     letter-spacing: 10px;
