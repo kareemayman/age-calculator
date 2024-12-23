@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form"
 import { Input } from "./Input"
 import arrowIcon from '../../assets/images/icon-arrow.svg'
+import { AgeOutput } from "./AgeOutput"
 
 export function Form() {
   const {
@@ -15,6 +16,7 @@ export function Form() {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit(onSubmit)}>
       <Input
         register={register("day", { required: "This field is required" })}
@@ -36,5 +38,9 @@ export function Form() {
 
       <div className="form__img"><img src={arrowIcon} alt="icon-arrow" /></div>
     </form>
+    <AgeOutput title='years'></AgeOutput>
+    <AgeOutput title='months'></AgeOutput>
+    <AgeOutput title='days'></AgeOutput>
+    </>
   )
 }

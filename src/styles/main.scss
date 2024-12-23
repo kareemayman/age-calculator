@@ -24,16 +24,21 @@ body {
   border-bottom-right-radius: 120px;
   width: 90vw;
   @media (min-width: 769px) {
-    width: 60vw;
+    width: 50vw;
     padding: 60px;
   }
 }
 
+:root {
+  --form-padding: 60px;
+}
+
 form {
   display: flex;
-  padding-bottom: 60px;
+  padding-bottom: var(--form-padding);
+  margin-bottom: var(--form-padding);
   @media (min-width: 1200px) {
-    padding-bottom: 50px;
+    --form-padding: 50px;
   }
   border-bottom: 1px solid var(--light-grey);
   position: relative;
@@ -50,7 +55,6 @@ form {
       color: var(--smokey-grey);
       @media (max-width: 1199px) {
         font-size: 0.7rem;
-        
       }
     }
 
@@ -65,7 +69,7 @@ form {
       font-weight: 700;
       font-style: normal;
       @media (min-width: 1200px) {
-        font-size: var(--input-font-size);
+        font-size: clamp(20px, 10px + 1vw, 32px);
       }
       outline: none;
       border: 1px solid var(--light-grey);
@@ -106,5 +110,13 @@ form {
       width: 100%;
       border-radius: 50%;
     }
+  }
+}
+
+.age-output {
+  font-size: clamp(16px, 10px + 5vw, 90px);
+  span {
+    color: var(--purple);
+    letter-spacing: 10px;
   }
 }
