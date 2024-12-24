@@ -36,7 +36,12 @@ export function Form() {
         placeholder="YYYY"
       ></Input>
 
-      <div className="form__img"><img src={arrowIcon} alt="icon-arrow" /></div>
+      <input type="submit" />
+
+      <div className="form__img">
+        <img src={arrowIcon} alt="icon-arrow" />
+      </div>
+
     </form>
     <AgeOutput title='years'></AgeOutput>
     <AgeOutput title='months'></AgeOutput>
