@@ -22,19 +22,22 @@ export function Form() {
         register={register("day", { required: "This field is required" })}
         label="DAY"
         placeholder="DD"
+        errors={errors}
       ></Input>
       
       <Input
         register={register("month", { required: "This field is required" })}
         label="MONTH"
         placeholder="MM"
+        errors={errors}
       ></Input>
 
       <Input
         register={register("year", { required: "This field is required" })}
         label="YEAR"
         placeholder="YYYY"
-      ></Input>
+        errors={errors}
+        ></Input>
 
       <input type="submit" />
 

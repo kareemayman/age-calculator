@@ -98,6 +98,16 @@ form {
         color: var(--smokey-grey);
       }
     }
+
+    .input__error {
+      display: block;
+      color: var(--light-red);
+      font-size: 0.9rem;
+      @media (max-width: 769px) {
+        font-size: 0.8rem;
+      }
+      margin: 5px 20px 5px 0;
+    }
   }
 
   .form__img {
