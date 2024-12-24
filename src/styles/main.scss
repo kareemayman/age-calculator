@@ -110,6 +110,16 @@ form {
     }
   }
 
+  .input--red {
+    input {
+      border-color: var(--light-red);
+    }
+    
+    label {
+      color: var(--light-red);
+    }
+  }
+
   .form__img {
     @media (max-width: 1199px) {
       width: 65px;
