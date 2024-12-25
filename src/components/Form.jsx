@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form"
 import { Input } from "./Input"
 import arrowIcon from "../../assets/images/icon-arrow.svg"
 import { AgeOutput } from "./AgeOutput"
-import { useEffect } from "react"
 
 export function Form() {
   const {
@@ -13,17 +12,19 @@ export function Form() {
   } = useForm()
 
   const onSubmit = (data) => {
-    // const dateString = data.year + "-" + data.month + "-" + data.day
-    // // console.log(dateString)
-    // const { year, month, day } = data
-    // const date = new Date(dateString)
-    // const monthFromDateAPI = date.getMonth() + 1
-    // const monthFromForm = +month
-    // if (monthFromDateAPI != monthFromForm) {
-    //   console.log("Invalid date")
-    //   errors.day = { message: "Must be a valid date" }
-    //   console.log(errors)
-    // }
+    const dateString = data.year + "-" + data.month + "-" + data.day
+    console.log(dateString)
+    const date = new Date(dateString)
+    const currentData = new Date()
+    let diff = currentData - date
+    const years = Math.trunc(diff / (1000 * 60 * 60 * 24 * 365.25))
+    diff -= years * (1000 * 60 * 60 * 24 * 365.25)
+    const months = Math.trunc(diff / (1000 * 60 * 60 * 24 * 30.44))
+    diff -= months * (1000 * 60 * 60 * 24 * 30.44)
+    const days = Math.trunc(diff / (1000 * 60 * 60 * 24))
+    console.log(years)
+    console.log(months)
+    console.log(days)
   }
 
   return (
@@ -38,7 +39,6 @@ export function Form() {
               if (watch("year") != "" && watch("month") != "") {
                 const dateString =
                   watch("year") + "-" + watch("month") + "-" + value
-                console.log(dateString)
                 const date = new Date(dateString)
                 const monthFromDateAPI = date.getMonth() + 1
                 const monthFromForm = +watch("month")
