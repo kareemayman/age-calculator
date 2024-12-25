@@ -39,6 +39,7 @@ body {
     padding: 60px;
     border-bottom-right-radius: 13vw;
   }
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
 }
 
 :root {
@@ -77,15 +78,19 @@ form {
         width: calc(100% - 30px);
         padding: 20px;
       }
+
       font-family: "Poppins", serif;
       font-weight: 700;
       font-style: normal;
       @media (min-width: 1200px) {
         font-size: clamp(20px, 10px + 1vw, 32px);
       }
+
+      transition: var(--main-trans);
       outline: none;
       border: 1px solid var(--light-grey);
       border-radius: 8px;
+
       // Removing Arrows from Number Inputs
       /* For WebKit browsers (Chrome, Safari, Edge) */
       &::-webkit-inner-spin-button,
@@ -96,6 +101,10 @@ form {
 
       &::placeholder {
         color: var(--smokey-grey);
+      }
+
+      &:focus {
+        border-color: var(--purple);
       }
     }
 
@@ -110,11 +119,17 @@ form {
     }
   }
 
+  // .input:nth-of-type(3) {
+  //   .input__error {
+  //     margin: 5px 0;
+  //   }
+  // }
+
   .input--red {
     input {
       border-color: var(--light-red);
     }
-    
+
     label {
       color: var(--light-red);
     }
@@ -124,6 +139,7 @@ form {
     @media (max-width: 1199px) {
       width: 65px;
     }
+    transition: var(--main-trans);
     background-color: var(--purple);
     border-radius: 50%;
     padding: 20px;
@@ -134,9 +150,13 @@ form {
       width: 100%;
       border-radius: 50%;
     }
+
+    // &:hover {
+    //   background-color: black;
+    // }
   }
 
-  input[type='submit'] {
+  input[type="submit"] {
     position: absolute;
     @include arrow-position();
     z-index: 1;
@@ -148,6 +168,10 @@ form {
     cursor: pointer;
     border: none;
     outline: 0;
+    transition: var(--main-trans);
+    &:hover + .form__img {
+      background-color: black;
+    }
   }
 }
 
