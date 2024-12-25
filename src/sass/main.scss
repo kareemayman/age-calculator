@@ -177,12 +177,11 @@ form {
 
 .age-output {
   font-size: clamp(16px, 12px + 5vw, 90px);
-
   @media (max-width: 900px) {
     font-size: clamp(16px, 5px + 9vw, 90px);
   }
   span {
     color: var(--purple);
-    letter-spacing: 10px;
+    font-size: 1.1em;
   }
 }

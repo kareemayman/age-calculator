@@ -1,7 +1,7 @@
-export function AgeOutput({ title }) {
+export function AgeOutput({ title, children }) {
   return (
     <h1 className="age-output poppins-extrabold-italic">
-      <span>--</span> {title}
+      <span>{children}</span> {title}
     </h1>
   )
 }
