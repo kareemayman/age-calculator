@@ -35,11 +35,11 @@ body {
   border-bottom-right-radius: 30vw;
   width: 90vw;
   @media (min-width: 900px) {
-    width: 50vw;
+    width: 48vw;
     padding: 60px;
     border-bottom-right-radius: 13vw;
   }
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
+  // box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
 }
 
 :root {
