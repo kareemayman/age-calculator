@@ -23,13 +23,28 @@ export function Form() {
     const currentData = new Date()
     let diff = currentData - date
     const years = Math.trunc(diff / (1000 * 60 * 60 * 24 * 365.25))
-    setYears(years)
+    let countYears = 0
+    const intervalYears = setInterval(() => {
+      setYears(countYears)
+      if (countYears >= years) clearInterval(intervalYears)
+      countYears++
+    }, 400 / years)
     diff -= years * (1000 * 60 * 60 * 24 * 365.25)
     const months = Math.trunc(diff / (1000 * 60 * 60 * 24 * 30.44))
-    setMonths(months)
+    let countMonths = 0
+    const intervalMonths = setInterval(() => {
+      setMonths(countMonths)
+      if (countMonths >= months) clearInterval(intervalMonths)
+      countMonths++
+    }, 400 / months)
     diff -= months * (1000 * 60 * 60 * 24 * 30.44)
     const days = Math.trunc(diff / (1000 * 60 * 60 * 24))
-    setDays(days)
+    let countDays = 0
+    const intervalDays = setInterval(() => {
+      setDays(countDays)
+      if (countDays >= days) clearInterval(intervalDays)
+      countDays++
+    }, 400 / days)
   }
 
   return (
