@@ -18,11 +18,20 @@ export function Form() {
   const [days, setDays] = useState("- -")
 
   const yearWatcher = watch("year")
+  const monthWatcher = watch("month")
+  const dayWatcher = watch("day")
   useEffect(() => {
-    if (yearWatcher != undefined) {
-      trigger(["day","year"])
+    if (
+      yearWatcher != undefined &&
+      monthWatcher != undefined &&
+      dayWatcher != undefined &&
+      yearWatcher != "" &&
+      monthWatcher != "" &&
+      dayWatcher != ""
+    ) {
+      trigger(["day", "year", "month"])
     }
-  }, [yearWatcher])
+  }, [yearWatcher, monthWatcher, dayWatcher])
 
   const onSubmit = (data) => {
     const dateString = data.year + "-" + data.month + "-" + data.day
