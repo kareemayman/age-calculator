@@ -2,19 +2,27 @@ import { set, useForm } from "react-hook-form"
 import { Input } from "./Input"
 import arrowIcon from "../../assets/images/icon-arrow.svg"
 import { AgeOutput } from "./AgeOutput"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export function Form() {
   const {
     register,
     handleSubmit,
     watch,
+    trigger,
     formState: { errors },
   } = useForm()
 
   const [years, setYears] = useState("- -")
   const [months, setMonths] = useState("- -")
   const [days, setDays] = useState("- -")
+
+  const yearWatcher = watch("year")
+  useEffect(() => {
+    if (yearWatcher != undefined) {
+      trigger(["day","year"])
+    }
+  }, [yearWatcher])
 
   const onSubmit = (data) => {
     const dateString = data.year + "-" + data.month + "-" + data.day
